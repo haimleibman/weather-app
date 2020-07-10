@@ -1,0 +1,20 @@
+.root {
+    height: 100vh;
+
+    .body {
+        display: grid;
+        grid-template-areas:
+            "sidebar seartch side"
+            "sidebar details side"
+            "sidebar footer side";
+        grid-template-columns: minmax(1em, 10%) 1fr minmax(1em, 10%);
+        grid-template-rows: 5em 1fr 15em;
+
+        height: 100%;
+
+        background-image: url(https://picsum.photos/1000/500);
+        background-attachment: fixed;
+        background-position: center center;
+        background-size: cover;
+    }
+}

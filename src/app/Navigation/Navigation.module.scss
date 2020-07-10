@@ -1,0 +1,23 @@
+.navButtonsContainer {
+
+    .navButton {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #3f51b5;
+        width: 10em;
+        color: lightgray;
+
+        &:hover {
+            background-color: #3f51b5;
+        }
+
+        &.selected {
+            color: white;
+            background-color: rgb(23, 59, 126);
+        }
+
+        .text {
+            font-size: x-small;
+        }
+    }
+}

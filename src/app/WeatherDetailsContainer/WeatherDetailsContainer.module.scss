@@ -1,0 +1,11 @@
+.container {
+    grid-area: details;
+
+    display: grid;
+    grid-template-areas: 
+        'details operations'
+        'forecasts forecasts';
+    grid-template: 1fr 10em / 1fr 1fr;
+    justify-self: stretch;
+    opacity: .8;
+}

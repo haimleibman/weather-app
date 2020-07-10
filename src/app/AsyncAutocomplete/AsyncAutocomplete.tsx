@@ -3,17 +3,18 @@ import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { GET_COTIRS_URL } from '../staticStore';
-import { useSetRecoilState, useRecoilValue } from 'recoil';
-import { cities, citiesNames } from '../store/store';
+import { GET_CITIES_URL } from '../staticStore';
+import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
+import { Cities, citiesNames, SelectedCityKey } from '../store/store';
 import styles from './AsyncAutocomplete.module.scss';
+import { City } from '../models/city';
 
-export default function Asynchronous() {
+export default function AsynAutocomplete() {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
-  const setCities = useSetRecoilState(cities);
-  const names = useRecoilValue(citiesNames);
+  const [cities, setCities] = useRecoilState<City[]>(Cities);
+  const setSelectedCityKey = useSetRecoilState(SelectedCityKey);
 
   useEffect((): void => {
     (async () => {
@@ -21,11 +22,11 @@ export default function Asynchronous() {
         return;
 
       setLoading(true);
-      const {data} = await axios.get(`${GET_COTIRS_URL}${text}&language=en-us`);
+      const {data} = await axios.get(`${GET_CITIES_URL}${text}&language=en-us`);
 
       setLoading(false);
 
-      setCities(cities => cities.concat(data));
+      setCities(previous => previous.concat(data));
     })();
   }, [setCities, text]);
 
@@ -35,23 +36,26 @@ export default function Asynchronous() {
       open={open}
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
-      getOptionSelected={(option, value) => option === value}
-      getOptionLabel={(option) => option}
-      options={text ? names : []}
+      getOptionSelected={(option, value) => {
+        setSelectedCityKey(option.Key);
+        return option.LocalizedName === value.LocalizedName
+      }}
+      getOptionLabel={(option) => option.LocalizedName}
+      options={text ? cities : []}
       loading={loading}
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Asynchronous"
+          label="Search a city"
           variant="filled"
           onChange={event => setText(event.target.value)}
           InputProps={{
             ...params.InputProps,
             endAdornment: (
-              <React.Fragment>
+              <>
                 {loading ? <CircularProgress color="inherit" size={20} /> : null}
                 {params.InputProps.endAdornment}
-              </React.Fragment>
+              </>
             ),
           }}
         />
