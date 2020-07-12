@@ -4,13 +4,14 @@ import Header from '../Header/Header';
 import AsyncAutocomplete from '../AsyncAutocomplete/AsyncAutocomplete';
 import { WeatherDetailsContainer } from '../WeatherDetailsContainer/WeatherDetailsContainer';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Favorites from '../Favorites/Favorites';
 
 const Layout = () => {
     return <Router>
+    <Header/>
         <Switch>
             <Route path="/home">
                 <div className={styles.root}>
-                    <Header/>
                     <div className={styles.body}>
                         <AsyncAutocomplete/>
                         <WeatherDetailsContainer/>
@@ -18,7 +19,7 @@ const Layout = () => {
                 </div>
             </Route>
             <Route path="/favorites">
-                {/* <Favorites/> */}
+                <Favorites />
             </Route>
             <Route path="*" render={() => <Redirect to="/home" />} />
         </Switch>
