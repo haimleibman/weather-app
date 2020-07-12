@@ -8,11 +8,13 @@
         'icon description';
     grid-template-rows: 3em 4em 1fr;
     grid-template-columns: 8em 1fr;
+    justify-self: center;
 
     margin: .5em;
 
         .city {
             grid-area: city;
+            justify-self: center;
             
             margin-left: .5em;
             color: gray;

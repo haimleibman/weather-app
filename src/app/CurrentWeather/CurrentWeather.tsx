@@ -13,7 +13,7 @@ const CurrentWeather = () => {
 
     useEffect((): void => {
         (async () => {
-            const {data} = await Axios.get(`${GET_CITY_WEATHER_URL_PREFIX}${city.key}${GET_CITY_WEATHER_URL_SUFFIX}`);
+            const {data} = await Axios.get(`${GET_CITY_WEATHER_URL_PREFIX}${city.Key}${GET_CITY_WEATHER_URL_SUFFIX}`);
 
             setPresentCity(data[0]);
         })()
@@ -22,7 +22,7 @@ const CurrentWeather = () => {
     const iconUrl = useIconUrl((presentCity as CityWeatherDetails).WeatherIcon);
 
     return <div className={styles.currentWeather}>
-        <div className={styles.city}>{city.name}</div>
+        <div className={styles.city}>{city.LocalizedName}</div>
         <img className={styles.icon} src={iconUrl} alt='Waether icon'/>
         <div className={styles.degree}>{(presentCity as CityWeatherDetails)?.Temperature?.Metric?.Value} c</div>
         <div className={styles.description}>{(presentCity as CityWeatherDetails)?.WeatherText}</div>

@@ -1,14 +1,13 @@
-import axios from 'axios';
+import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { GET_CITIES_URL } from '../staticStore';
-import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
-import { Cities, citiesNames, SelectedCity } from '../common/store';
+import { useSetRecoilState, useRecoilState } from 'recoil';
+import { Cities, SelectedCity } from '../common/store';
 import styles from './AsyncAutocomplete.module.scss';
 import { City } from '../models/city';
-import Axios from 'axios';
 
 export default function AsynAutocomplete() {
   const [open, setOpen] = useState(false);
@@ -31,16 +30,18 @@ export default function AsynAutocomplete() {
     })();
   }, [setCities, text]);
 
+  const getSelected = (option: City, value: City) => {
+    setSelectedCityKey(option);
+    return option.LocalizedName === value.LocalizedName
+  }
+
   return (
     <Autocomplete
       className={styles.autocomplete}
       open={open}
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
-      getOptionSelected={(option, value) => {
-        setSelectedCityKey({key: option.Key, name: option.LocalizedName});
-        return option.LocalizedName === value.LocalizedName
-      }}
+      getOptionSelected={getSelected}
       getOptionLabel={(option) => option.LocalizedName}
       options={text ? cities : []}
       loading={loading}

@@ -35,7 +35,7 @@ const Forecasts = () => {
 
   useEffect((): void => {
     (async () => {
-      const {data} = await Axios.get(`${GET_5DAY_WEATHER_URL_PREFIX}${selectedCity.key}${GET_5DAY_WEATHER_URL_SUFFFIX}`);
+      const {data} = await Axios.get(`${GET_5DAY_WEATHER_URL_PREFIX}${selectedCity.Key}${GET_5DAY_WEATHER_URL_SUFFFIX}`);
 
       setDays(data["DailyForecasts"]);
     })();

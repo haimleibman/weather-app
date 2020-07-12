@@ -1,5 +1,5 @@
-import { City } from '../models/city';
-import {atom, selector} from 'recoil';
+import { City } from './../models/city';
+import { atom } from 'recoil';
 
 
 export const Cities = atom<City[]>({
@@ -7,16 +7,12 @@ export const Cities = atom<City[]>({
   default: []
 });
 
-export const SelectedCity = atom({
+export const SelectedCity = atom<City>({
   key: 'selectedCity',
-  default: {key: '215854', name: 'Tel Aviv'}
+  default: {Key: '215854', LocalizedName: 'Tel Aviv'}
 });
 
-export const citiesNames = selector({
-  key: 'citiesNames',
-  get: ({get}) => {
-    const citiesTemp: City[] = get(Cities);
-
-    return citiesTemp.map(city => city.LocalizedName);
-  },
+export const Favorites = atom<City[]>({
+  key: 'favorites',
+  default: []
 });

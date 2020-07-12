@@ -3,10 +3,23 @@
 
     display: grid;
     grid-template-areas: 
-        'details operations'
-        'forecasts forecasts';
-    grid-template-rows: 1fr 8em;
-    grid-template-columns: 1fr 1fr;
+        'operations'
+        'details'
+        'forecasts';
+    grid-template-rows: 3em 1fr 8em;
     
-    opacity: .8;
+    box-shadow:
+        0px 2px 1px -1px rgba(0,0,0,0.2),
+        0px 1px 1px 0px rgba(0,0,0,0.14),
+        0px 1px 3px 0px rgba(0,0,0,0.12);
+
+    background-color: rgba(255, 255, 255, 0.3);
+
+    .favoritesButton {
+        margin: 1em;
+
+        svg {
+            color: gray;
+        }
+    }
 }
