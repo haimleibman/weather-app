@@ -5,12 +5,12 @@ import CurrentWeather from '../CurrentWeather/CurrentWeather';
 import Forecasts from '../Forecasts/Forecasts';
 import { FavoriteBorder, Favorite } from '@material-ui/icons';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { Favorites, SelectedCity } from '../common/store';
+import { FavoriteCities, SelectedCity } from '../common/store';
 import { City } from '../models/city';
 
 
 export const WeatherDetailsContainer = () => {
-    const [favorites, setFavorites] = useRecoilState(Favorites);
+    const [favorites, setFavorites] = useRecoilState(FavoriteCities);
     const currentCity = useRecoilValue(SelectedCity);
 
     const upsertFavorites = () => {

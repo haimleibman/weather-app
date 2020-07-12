@@ -6,28 +6,7 @@ import { GET_5DAY_WEATHER_URL_PREFIX, GET_5DAY_WEATHER_URL_SUFFFIX } from '../st
 import DayWeather from '../DayWeather/DayWeather';
 import { DayWeatherProps } from '../models/dayWeatherProps.model';
 import styles from './Forecasts.module.scss';
-
-interface TemperatureProps {
-    Value: string,
-    Unit: string
-}
-
-interface VisualProps {
-    Icon: number,
-    IconPhrase: string
-}
-
-interface Temperature {
-    Minimum: TemperatureProps,
-    Maximum: TemperatureProps
-}
-
-interface DayForecast {
-    Date: string,
-    Temperature: Temperature,
-    Day: VisualProps,
-    Night: VisualProps
-}
+import { DayForecast } from '../models/dayForecost.model';
 
 const Forecasts = () => {
     const selectedCity = useRecoilValue(SelectedCity);
@@ -52,9 +31,9 @@ const Forecasts = () => {
   }
 
   return <div className={styles.forecasts}>
-        {days.map(day => {
+        {days.map((day, i) => {
             const weatherProps = convertDayDateToWaetherProps(day);
-            return <DayWeather {...weatherProps} /> 
+            return <DayWeather key={i} {...weatherProps} /> 
         })}
     </div> 
 }

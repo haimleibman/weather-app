@@ -12,7 +12,7 @@ export const SelectedCity = atom<City>({
   default: {Key: '215854', LocalizedName: 'Tel Aviv'}
 });
 
-export const Favorites = atom<City[]>({
+export const FavoriteCities = atom<City[]>({
   key: 'favorites',
   default: []
 });
