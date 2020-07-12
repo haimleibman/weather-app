@@ -5,16 +5,17 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { GET_CITIES_URL } from '../staticStore';
 import { useSetRecoilState, useRecoilValue, useRecoilState } from 'recoil';
-import { Cities, citiesNames, SelectedCityKey } from '../store/store';
+import { Cities, citiesNames, SelectedCity } from '../common/store';
 import styles from './AsyncAutocomplete.module.scss';
 import { City } from '../models/city';
+import Axios from 'axios';
 
 export default function AsynAutocomplete() {
   const [open, setOpen] = useState(false);
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
   const [cities, setCities] = useRecoilState<City[]>(Cities);
-  const setSelectedCityKey = useSetRecoilState(SelectedCityKey);
+  const setSelectedCityKey = useSetRecoilState(SelectedCity);
 
   useEffect((): void => {
     (async () => {
@@ -22,7 +23,7 @@ export default function AsynAutocomplete() {
         return;
 
       setLoading(true);
-      const {data} = await axios.get(`${GET_CITIES_URL}${text}&language=en-us`);
+      const {data} = await Axios.get(`${GET_CITIES_URL}${text}&language=en-us`);
 
       setLoading(false);
 
@@ -37,7 +38,7 @@ export default function AsynAutocomplete() {
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
       getOptionSelected={(option, value) => {
-        setSelectedCityKey(option.Key);
+        setSelectedCityKey({key: option.Key, name: option.LocalizedName});
         return option.LocalizedName === value.LocalizedName
       }}
       getOptionLabel={(option) => option.LocalizedName}

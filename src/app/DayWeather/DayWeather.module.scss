@@ -1,0 +1,12 @@
+.dayWrather {
+    display: grid;;
+    grid-template-rows: 2em 3em 2em;
+    justify-items: center;
+    border-radius: 1em;
+    border: 1px solid lightgray;
+    height: -webkit-fill-available;
+
+    .header {
+        color: gray;
+    }
+}

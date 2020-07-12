@@ -1,0 +1,45 @@
+.currentWeather {
+    grid-area: details;
+
+    display: grid;
+    grid-template-areas: 
+        'city city'
+        'icon degree'
+        'icon description';
+    grid-template-rows: 3em 4em 1fr;
+    grid-template-columns: 8em 1fr;
+
+    margin: .5em;
+
+        .city {
+            grid-area: city;
+            
+            margin-left: .5em;
+            color: gray;
+            
+            font-size: 1.5em;
+        }
+
+        .icon {
+            margin-left: -2em;
+            width: -webkit-fill-available;
+            clip-path: circle(35% at 50% 50%);
+        }
+
+        .degree {
+            grid-area: degree;
+            align-self: end;
+
+            margin-left: -1em;
+            
+            font-size: 2em;
+        }
+
+        .description {
+            grid-area: description;
+            
+            margin-left: -2em;
+
+            color: gray;
+        }
+}

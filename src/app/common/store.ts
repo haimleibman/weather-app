@@ -1,4 +1,4 @@
-import { City } from './../models/city';
+import { City } from '../models/city';
 import {atom, selector} from 'recoil';
 
 
@@ -7,9 +7,9 @@ export const Cities = atom<City[]>({
   default: []
 });
 
-export const SelectedCityKey = atom({
+export const SelectedCity = atom({
   key: 'selectedCity',
-  default: '215854'
+  default: {key: '215854', name: 'Tel Aviv'}
 });
 
 export const citiesNames = selector({

@@ -5,7 +5,8 @@
     grid-template-areas: 
         'details operations'
         'forecasts forecasts';
-    grid-template: 1fr 10em / 1fr 1fr;
-    justify-self: stretch;
+    grid-template-rows: 1fr 8em;
+    grid-template-columns: 1fr 1fr;
+    
     opacity: .8;
 }

@@ -1,0 +1,13 @@
+.forecasts {
+    grid-area: forecasts;
+    display: grid;
+    grid-template-columns: repeat(5, 6em);
+    gap: .5em;
+    margin: .5em 1em;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

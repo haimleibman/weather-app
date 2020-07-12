@@ -5,3 +5,6 @@ export const GET_CITIES_URL: string = `${WEATHER_API_URL_BASE}locations/v1/citie
 
 export const GET_CITY_WEATHER_URL_PREFIX: string = `${WEATHER_API_URL_BASE}currentconditions/v1/`;
 export const GET_CITY_WEATHER_URL_SUFFIX: string = `?apikey=${WEATHER_API_KEY}&details=true`;
+
+export const GET_5DAY_WEATHER_URL_PREFIX: string = `${WEATHER_API_URL_BASE}forecasts/v1/daily/5day/`;
+export const GET_5DAY_WEATHER_URL_SUFFFIX: string = `?apikey=${WEATHER_API_KEY}&metric=true`;
