@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Haim-Leybman-8-7-2020/static/css/main.d0a044bd.chunk.css",
-    "main.js": "/Haim-Leybman-8-7-2020/static/js/main.f5e24673.chunk.js",
-    "main.js.map": "/Haim-Leybman-8-7-2020/static/js/main.f5e24673.chunk.js.map",
+    "main.js": "/Haim-Leybman-8-7-2020/static/js/main.b17cc941.chunk.js",
+    "main.js.map": "/Haim-Leybman-8-7-2020/static/js/main.b17cc941.chunk.js.map",
     "runtime-main.js": "/Haim-Leybman-8-7-2020/static/js/runtime-main.0da635ba.js",
     "runtime-main.js.map": "/Haim-Leybman-8-7-2020/static/js/runtime-main.0da635ba.js.map",
     "static/js/2.b3a7a706.chunk.js": "/Haim-Leybman-8-7-2020/static/js/2.b3a7a706.chunk.js",
     "static/js/2.b3a7a706.chunk.js.map": "/Haim-Leybman-8-7-2020/static/js/2.b3a7a706.chunk.js.map",
     "index.html": "/Haim-Leybman-8-7-2020/index.html",
-    "precache-manifest.eac44376a8f39592958bd4f2dacef2a3.js": "/Haim-Leybman-8-7-2020/precache-manifest.eac44376a8f39592958bd4f2dacef2a3.js",
+    "precache-manifest.d5758149e23f8e1896d887c039f9daba.js": "/Haim-Leybman-8-7-2020/precache-manifest.d5758149e23f8e1896d887c039f9daba.js",
     "service-worker.js": "/Haim-Leybman-8-7-2020/service-worker.js",
     "static/css/main.d0a044bd.chunk.css.map": "/Haim-Leybman-8-7-2020/static/css/main.d0a044bd.chunk.css.map",
     "static/js/2.b3a7a706.chunk.js.LICENSE.txt": "/Haim-Leybman-8-7-2020/static/js/2.b3a7a706.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0da635ba.js",
     "static/js/2.b3a7a706.chunk.js",
     "static/css/main.d0a044bd.chunk.css",
-    "static/js/main.f5e24673.chunk.js"
+    "static/js/main.b17cc941.chunk.js"
   ]
 }

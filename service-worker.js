@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Haim-Leybman-8-7-2020/precache-manifest.eac44376a8f39592958bd4f2dacef2a3.js"
+  "/Haim-Leybman-8-7-2020/precache-manifest.d5758149e23f8e1896d887c039f9daba.js"
 );
 
 self.addEventListener('message', (event) => {
