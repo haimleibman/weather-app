@@ -10,7 +10,7 @@ const Layout = () => {
     return <Router>
     <Header/>
         <Switch>
-            <Route path="/home">
+            <Route path="/Haim-Leybman-8-7-2020/home">
                 <div className={styles.root}>
                     <div className={styles.body}>
                         <AsyncAutocomplete/>
@@ -18,10 +18,10 @@ const Layout = () => {
                     </div>
                 </div>
             </Route>
-            <Route path="/favorites">
+            <Route path="/Haim-Leybman-8-7-2020/favorites">
                 <Favorites />
             </Route>
-            <Route path="*" render={() => <Redirect to="/home" />} />
+            <Route path="*" render={() => <Redirect to="/Haim-Leybman-8-7-2020/home" />} />
         </Switch>
     </Router>
 }

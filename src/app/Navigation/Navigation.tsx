@@ -10,13 +10,13 @@ const Navigation = () => {
 
     return <ButtonGroup className={styles.navButtonsContainer} variant="text" color="inherit" aria-label="text primary button group">
     <Button className={classNames(styles.navButton, {[styles.selected]: value === 'Local Weather'})} onClick={() => setValue('Local Weather')}>
-      <Link to='/home'>
+      <Link to='/Haim-Leybman-8-7-2020/home'>
         <LocationOn/>
         <p className={styles.text}>Local Weather</p>
       </Link>
     </Button>
     <Button className={classNames(styles.navButton, {[styles.selected]: value === 'Favorite'})} onClick={() => setValue('Favorite')}>
-      <Link to='/favorites'>
+      <Link to='/Haim-Leybman-8-7-2020/favorites'>
         <Favorite/>
         <p className={styles.text}>Favorite</p>
       </Link>
